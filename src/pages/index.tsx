@@ -1,52 +1,11 @@
-import { useTableData } from "@/store/useTableData";
-import { useEffect } from "react";
+import { Toolbar } from "@/components/molecules/Toolbar";
+import { Grid } from "@/components/organisms/Grid";
 
-const mockTableData = [
-  {
-    col1: 'name',
-    col2: 'desc',
-  },
-  {
-    col1: 'name',
-    col2: 'desc',
-  },
-  {
-    col1: 'name',
-    col2: 'desc',
-  },
-  {
-    col1: 'name',
-    col2: 'desc',
-  },
-]
 export default function Home() {
-
-  const {tableData, setTableData} =  useTableData()
-
-  useEffect(()=>{
-    setTableData(mockTableData)
-  },[])
-
   return (
-      <table>
-        <thead>
-          <tr>
-            {Object.keys(tableData[0]).map((key) => (
-              <th key={key}>{key}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {tableData.map((row) => (
-            <tr key={Object.values(row).join('')}>
-              {Object.values(row).map((value) => (
-                <td key={value}>{value}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
+    <div className="w-screen h-screen overflow-auto flex flex-col ">
+      <Toolbar />
+      <Grid />
+    </div>
   );
 }
-
