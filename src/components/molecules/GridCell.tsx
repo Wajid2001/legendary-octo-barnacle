@@ -13,7 +13,7 @@ export function GridCell({ virtualColumn, virtualRow }: { virtualColumn: Virtual
       style={{
         width: `${virtualColumn.size}px`,
         height: `${virtualRow.size}px`,
-        transform: `translateX(${virtualColumn.start}px) translateY(${virtualRow.start}px)`,
+        transform: `translateX(${virtualColumn.start + 24}px) translateY(${virtualRow.start + 24}px)`,
       }}
       className="border border-collapse absolute top-0 left-0 "
     >
