@@ -9,7 +9,7 @@ export const GridSizeEdit = () => {
   const setNCols = useGrid((s) => s.setNCols);
 
   return (
-    <div className="flex flex-row gap-2 max-w-sm">
+    <div className="flex flex-row gap-2 max-w-sm px-2 items-center">
       <Input
         value={`${nRows}`}
         type="number"

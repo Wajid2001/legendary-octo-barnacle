@@ -1,9 +1,9 @@
 import { useGrid } from "@/store/useGrid";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import React, { useRef } from "react";
-import { GridCell } from "../molecules/GridCell";
-import { GridHeadColCell } from "../molecules/GridHeadColCell";
-import { GridHeadRowCell } from "../molecules/GridHeadRowCell";
+import { GridCell } from "../molecules/Grid/GridCell";
+import { GridHeadColCell } from "../molecules/Grid/GridHeadColCell";
+import { GridHeadRowCell } from "../molecules/Grid/GridHeadRowCell";
 
 export function Grid() {
   const parentRef = useRef(null);

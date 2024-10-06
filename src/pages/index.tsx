@@ -1,5 +1,5 @@
-import { Toolbar } from "@/components/molecules/Toolbar";
 import { Grid } from "@/components/organisms/Grid";
+import { Toolbar } from "@/components/organisms/Toolbar";
 
 export default function Home() {
   return (
