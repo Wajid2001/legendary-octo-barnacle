@@ -19,32 +19,34 @@ const mockTableData = [
     col2: 'desc',
   },
 ]
-
 export default function Home() {
 
   const {tableData, setTableData} =  useTableData()
-
 
   useEffect(()=>{
     setTableData(mockTableData)
   },[])
 
   return (
-
-
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-3xl font-bold">Legends of Tomorrow</h1> 
-
-      <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <p className="text-2xl font-bold">Table of Contents</p>
-        <div className="flex flex-row flex-wrap w-full justify-around">
-          {tableData.map((data) => (
-            <div className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center" key={data.name}>
-              <p className="text-2xl font-bold">{data.name}</p>
-            </div>
+      <table>
+        <thead>
+          <tr>
+            {Object.keys(tableData[0]).map((key) => (
+              <th key={key}>{key}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {tableData.map((row) => (
+            <tr key={Object.values(row).join('')}>
+              {Object.values(row).map((value) => (
+                <td key={value}>{value}</td>
+              ))}
+            </tr>
           ))}
-        </div>
-      </div>
-    </div>
+        </tbody>
+      </table>
+
   );
 }
+
