@@ -21,7 +21,6 @@ const TextAlignments = [
 ];
 
 export const CellFormatter = () => {
-  const tableData = useTableData((s) => s.tableData);
   const selectedCell = useTableData((s) => s.selectedCell);
 
   const setCellClassName = useTableData((s) => s.setCellClassName);
